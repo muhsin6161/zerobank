@@ -1,139 +1,73 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/Login1.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/AddNewPayee.feature");
 formatter.feature({
-  "name": "Login",
-  "description": "  As user, I want to be able to login into vytrack\n  under different roles with username and password",
+  "name": "Add new payee under pay bills",
+  "description": "",
   "keyword": "Feature"
 });
-formatter.scenario({
-  "name": "Login as store manager",
+formatter.scenarioOutline({
+  "name": "Add a new payee",
   "description": "",
-  "keyword": "Scenario"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on the login page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_is_on_the_login_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user logs in as store manager",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_logs_in_as_store_manager()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user verifies that \"Dashboard\" page subtitle is displayed",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_verifies_that_page_subtitle_is_displayed(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Login as driver",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on the login page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_is_on_the_login_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user logs in as driver",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_logs_in_as_driver()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user verifies that \"Dashboard\" page subtitle is displayed",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_verifies_that_page_subtitle_is_displayed(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Login as sales manager",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on the login page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_is_on_the_login_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user logs in as sales manager",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_logs_in_as_sales_manager()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user verifies that \"Dashboard\" page subtitle is displayed",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_verifies_that_page_subtitle_is_displayed(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Verify that warning message is displayed when password is not correct",
-  "description": "",
-  "keyword": "Scenario",
+  "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@negative_test"
+      "name": "@scenariooutlet"
+    }
+  ]
+});
+formatter.step({
+  "name": "user is on the login page",
+  "keyword": "Given "
+});
+formatter.step({
+  "name": "user enters valid credentials",
+  "keyword": "Then "
+});
+formatter.step({
+  "name": "user verifies that pagetitle is \"Zero - Account Summary\"",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "user navigate to \"Pay Bills\" submodule",
+  "keyword": "Then "
+});
+formatter.step({
+  "name": "user should click Add New Payee submodule",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "user create new Payee  \"\u003cPayee Name\u003e\",\"\u003cPayee Address\u003e\",\"\u003cAccount\u003e\",\"\u003cPayee Details\u003e\"",
+  "keyword": "Then "
+});
+formatter.examples({
+  "name": "",
+  "description": "",
+  "keyword": "Examples",
+  "rows": [
+    {
+      "cells": [
+        "Payee Name",
+        "Payee Address",
+        "Account",
+        "Payee Details"
+      ]
+    },
+    {
+      "cells": [
+        "The Law Offices of Hyde, Price \u0026 Scharks",
+        "The Law Offices of Hyde, Price \u0026 Scharks",
+        "Checking",
+        "XYZ account"
+      ]
+    }
+  ]
+});
+formatter.scenario({
+  "name": "Add a new payee",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@scenariooutlet"
     }
   ]
 });
@@ -145,73 +79,57 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "LoginStepDefinitions.user_is_on_the_login_page()"
+  "location": "LoginStepDefinition.user_is_on_the_login_page()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enters \"storemanager85\" username and \"wrong\" password",
+  "name": "user enters valid credentials",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "LoginStepDefinitions.user_enters_username_and_password(String,String)"
+  "location": "LoginStepDefinition.user_enters_valid_credentials()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user verifies that \"Invalid user name or password.\" message is displayed",
+  "name": "user verifies that pagetitle is \"Zero - Account Summary\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "LoginStepDefinitions.user_verifies_that_message_is_displayed(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Verify that warning message is displayed when username is not correct",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@negative_test"
-    }
-  ]
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on the login page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_is_on_the_login_page()"
+  "location": "AccountSummaryStepDefinitions.user_verifies_that_pagetitle_is(String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user enters \"wrong_username\" username and \"UserUser123\" password",
+  "name": "user navigate to \"Pay Bills\" submodule",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "LoginStepDefinitions.user_enters_username_and_password(String,String)"
+  "location": "AccountActivity.user_navigate_to_submodule(String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user verifies that \"Invalid user name or password.\" message is displayed",
+  "name": "user should click Add New Payee submodule",
   "keyword": "And "
 });
 formatter.match({
-  "location": "LoginStepDefinitions.user_verifies_that_message_is_displayed(String)"
+  "location": "AddNewPayesStepDefinition.user_should_click_Add_New_Payee_submodule()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user create new Payee  \"The Law Offices of Hyde, Price \u0026 Scharks\",\"The Law Offices of Hyde, Price \u0026 Scharks\",\"Checking\",\"XYZ account\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "AddNewPayesStepDefinition.user_create_new_Payee(String,String,String,String)"
 });
 formatter.result({
   "status": "passed"
